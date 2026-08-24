@@ -24,11 +24,9 @@
 		<sonar.host.url>http://3.83.23.107:9000/</sonar.host.url>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 	</properties>
 
 	<dependencies>
-		
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
@@ -58,17 +56,16 @@
 		</dependency>
 
 		<!-- compile dependencies -->
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-web</artifactId>
-    		<version>${spring.version}</version>
-  		</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -79,20 +76,9 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
-		<!-- provided dependencies -->
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
-		
 	</dependencies>
 	
 	<distributionManagement>
-	
 	    <repository>
 	      <id>nexus</id>
 	      <name>KK FUNDA Releases Nexus Repository</name>
@@ -104,7 +90,6 @@
 	      <name>KK FUNDA Snapshot Nexus Repository </name>
 	      <url>http://13.221.66.58:8081/repository/jio-maven-snapshot/</url>
 	    </snapshotRepository>
-	    
 	</distributionManagement>
 	
 	<build>
@@ -144,9 +129,12 @@
 					<wtpContextName>maven-web-application</wtpContextName>
 				</configuration>
 			</plugin>
-			
-</plugins>
+
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.10.0.2594</version>
+			</plugin>
+		</plugins>
 	</build>
-	
-	
 </project>
